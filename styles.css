@@ -1,0 +1,233 @@
+/* Minesweeper CSS - Classic styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.minesweeper-container {
+    background: #c0c0c0;
+    border: 3px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    padding: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.minesweeper-header {
+    margin-bottom: 15px;
+}
+
+.minesweeper-title {
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    padding: 10px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+label {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 2px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    background: #c0c0c0;
+    cursor: pointer;
+    outline: none;
+}
+
+button {
+    padding: 6px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    background: #c0c0c0;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.1s;
+}
+
+button:hover {
+    background: #d0d0d0;
+}
+
+button:active {
+    border: 2px solid #808080;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+}
+
+.mine-count-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#mine-count {
+    background: #000;
+    color: #f00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border: 2px solid #808080;
+    min-width: 50px;
+    text-align: center;
+}
+
+#reset-button {
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+#status-display {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    min-height: 24px;
+}
+
+.minesweeper-board {
+    display: grid;
+    gap: 1px;
+    background: #808080;
+    border: 3px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s;
+}
+
+.cell:hover:not(.revealed) {
+    background: #d0d0d0;
+}
+
+.cell:active:not(.revealed) {
+    border: 2px solid #808080;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+}
+
+.cell.revealed {
+    background: #e0e0e0;
+    border: 1px solid #a0a0a0;
+    cursor: default;
+}
+
+.cell.mine {
+    background: #ff6b6b;
+}
+
+.cell.flagged {
+    color: #f00;
+}
+
+/* Number colors */
+.cell-number-1 { color: #0000ff; }
+.cell-number-2 { color: #008000; }
+.cell-number-3 { color: #ff0000; }
+.cell-number-4 { color: #000080; }
+.cell-number-5 { color: #800000; }
+.cell-number-6 { color: #008080; }
+.cell-number-7 { color: #000000; }
+.cell-number-8 { color: #808080; }
+
+.difficulty-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #808080;
+}
+
+.difficulty-section h3 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.difficulty-info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 12px;
+    color: #000;
+}
+
+.minesweeper-board.win {
+    border-color: #4caf50;
+}
+
+.minesweeper-board.gameover {
+    border-color: #f44336;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .minesweeper-container {
+        padding: 10px;
+    }
+    
+    .cell {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+    }
+}

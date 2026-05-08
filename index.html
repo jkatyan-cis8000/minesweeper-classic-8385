@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Minesweeper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="minesweeper-container">
+        <div class="minesweeper-header">
+            <h1 class="minesweeper-title">💣 Minesweeper</h1>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="difficulty-select">Difficulty:</label>
+                <select id="difficulty-select">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="expert">Expert</option>
+                </select>
+            </div>
+
+            <button id="reset-button" title="Reset Game">🔄</button>
+
+            <div class="mine-count-display">
+                <label for="mine-count">💣</label>
+                <span id="mine-count">010</span>
+            </div>
+        </div>
+
+        <div id="status-display">Select a difficulty to start playing!</div>
+
+        <div id="game-board" class="minesweeper-board"></div>
+
+        <div class="difficulty-section">
+            <h3>How to Play:</h3>
+            <div class="difficulty-info">
+                <span>🖱️ Left-click: Reveal cell</span>
+                <span>🚩 Right-click: Flag mine</span>
+                <span>🎯 Goal: Reveal all safe cells</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="difficulty.js"></script>
+    <script src="game-core.js"></script>
+    <script src="ui.js"></script>
+    <script src="input.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
